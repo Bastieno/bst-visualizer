@@ -339,7 +339,7 @@ input[type="text"]::placeholder {
 
 .example-item {
   background: var(--white);
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md);
   border-radius: var(--radius-lg);
   margin: var(--space-sm) 0;
   font-family: var(--font-mono);
@@ -349,7 +349,7 @@ input[type="text"]::placeholder {
   box-shadow: var(--shadow-sm);
   font-size: 0.85rem;
   position: relative;
-  overflow: hidden;
+  overflow-wrap: break-word;
 }
 
 .example-item::before {
@@ -468,6 +468,8 @@ input[type="text"]::placeholder {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  word-break: break-word;
+  line-height: 1.2;
 }
 
 .stat-card .value {
@@ -765,6 +767,16 @@ input[type="text"]::placeholder {
   }
 }
 
+@media (max-width: 430px) {
+  .stat-card h4 {
+    font-size: 0.7rem;
+  }
+
+  .left-panel {
+    padding: var(--space-md);
+  }
+}
+
 /* Animation Enhancements */
 @keyframes fadeInUp {
   from {
@@ -916,7 +928,7 @@ input[type="text"]:focus-visible {
 
 .mobile-modal-body {
   flex: 1;
-  padding: var(--space-lg);
+  padding: var(--space-md);
   overflow-y: auto;
 }
 

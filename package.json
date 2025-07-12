@@ -2,7 +2,7 @@
   "name": "bst-visualizer",
   "version": "1.0.0",
   "description": "Interactive Binary Search Tree Visualizer built with React",
-  "homepage": "https://francisnduamaka.github.io/bst-visualizer",
+  "homepage": "https://bastieno.github.io/bst-visualizer",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

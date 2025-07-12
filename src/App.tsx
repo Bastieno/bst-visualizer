@@ -170,16 +170,20 @@ const App: React.FC = () => {
         return;
       }
 
+      if (currentMermaidRef === mobileMermaidRef && !showMobileModal) {
+        return;
+      }
+
       // Wait for the ref to be available
       let attempts = 0;
-      const maxAttempts = 10;
+      const maxAttempts = 20; // Increased attempts for more reliability
       
       const waitForRef = () => {
         if (currentMermaidRef.current) {
           performRender();
         } else if (attempts < maxAttempts) {
           attempts++;
-          setTimeout(waitForRef, 50);
+          setTimeout(waitForRef, 100); // Increased timeout
         } else {
           console.error('Mermaid ref not available after maximum attempts');
           setIsLoading(false);
@@ -235,7 +239,7 @@ const App: React.FC = () => {
     if (showResult && mermaidCode) {
       renderMermaidDiagram();
     }
-  }, [showResult, mermaidCode, treeStats?.nodeCount, currentMermaidRef]);
+  }, [showResult, mermaidCode, treeStats?.nodeCount, currentMermaidRef, showMobileModal]);
 
   useEffect(() => {
     if (showMobileModal) {
@@ -299,6 +303,9 @@ const App: React.FC = () => {
       
       // The useEffect hook now handles showing the mobile modal automatically
       // based on the window size and whether there is a result to show.
+      if (window.innerWidth <= 768) {
+        setShowMobileModal(true);
+      }
       
       // Set loading to false after a short delay to ensure DOM is ready
       setTimeout(() => {
