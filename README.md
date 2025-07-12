@@ -20,33 +20,38 @@ An interactive Binary Search Tree (BST) visualizer built with React and TypeScri
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <your-repo-url>
 cd bst-visualizer
 ```
 
-2. Install dependencies:
+1. Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. Start the development server:
+1. Start the development server:
+
 ```bash
 npm start
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Deployment to GitHub Pages
 
 This project is configured for easy deployment to GitHub Pages:
 
 1. Build the project:
+
 ```bash
 npm run build
 ```
 
-2. Deploy to GitHub Pages:
+1. Deploy to GitHub Pages:
+
 ```bash
 npm run deploy
 ```
@@ -84,7 +89,7 @@ Make sure to update the `homepage` field in `package.json` with your GitHub Page
 
 ## Project Structure
 
-```
+```ts
 src/
 ├── App.tsx          # Main application component
 ├── App.css          # Application styles
